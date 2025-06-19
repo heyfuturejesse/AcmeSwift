@@ -324,7 +324,7 @@ extension AcmeSwift {
         /// Return the SHA256 digest of the ACMEv2 account public key's JWK JSON.
         ///
         /// This value has to be present in an HTTP challenge value.
-        private func getAccountThumbprint() throws -> SHA256Digest {
+        public func getAccountThumbprint() throws -> SHA256Digest {
             guard let login = self.client.login else {
                 throw AcmeError.mustBeAuthenticated("\(AcmeSwift.self).init() must be called with an \(AccountCredentials.self)")
             }
